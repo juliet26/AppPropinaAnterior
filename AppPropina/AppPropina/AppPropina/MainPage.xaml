@@ -4,8 +4,54 @@
              xmlns:local="clr-namespace:AppPropina"
              x:Class="AppPropina.MainPage">
 
-	<Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <TableView Intent="Form"
+               HasUnevenRows="True">
+        <TableSection Title="Datos generales">
+            <EntryCell x:Name="entTotal"
+                       Label="Total"
+                       Placeholder="$0.0">
+            </EntryCell>
+            <EntryCell x:Name="entPropina"
+                       Label="Propina"
+                       Placeholder="%">
+            </EntryCell>
+            <EntryCell x:Name="entPersonas"
+                       Label="Personas"
+                       Placeholder="Ingresar número de personas">
+            </EntryCell>
+        </TableSection>
+        <TableSection Title="Calcular">
+            <ViewCell>
+                <ViewCell.View>
+                    <StackLayout>
+                        <Button Text="Calcular"
+                                x:Name="btnCalcular">
+                        </Button>
+                        <Image Source="icon.png"
+                               Scale=".8">
+                        </Image>
+                    </StackLayout>
+                </ViewCell.View>
+            </ViewCell>
+        </TableSection>
+        <TableSection Title="Resultado">
+            <TextCell x:Name="txtTotalPropina"
+                      Text="Propina"
+                      Detail="$0.0">                
+            </TextCell>
+            <TextCell x:Name="txtTotal"
+                      Text="Total"
+                      Detail="$0.0">
+            </TextCell>
+            <TextCell x:Name="txtPropinaPersona"
+                      Text="Propina por persona"
+                      Detail="$0.0">
+            </TextCell>
+            <TextCell x:Name="txtTotalPersona"
+                      Text="Total por persona"
+                      Detail="$0.0">
+            </TextCell>
+        </TableSection>
+    </TableView>
 
 </ContentPage>
